@@ -46,7 +46,7 @@ const ipsFromHyphenatedRange = ipsBetween('192.168.1.121', '192.168.1.126')
 
 // parseRange also accepts multi-dimensional arrays
 // so you can mix-and-match however you want
-const totallyWorks = parseRange(['192.168.1.120/29', ['10.0.0.2-10.0.0.8', '192.168.0.8/23-192.168.0.12']])
+const totallyWorks = parseRange(['192.168.1.120/29', ['10.0.0.2-10.0.0.8', '192.168.0.8-192.168.0.12']])
 
 /*
     output:
