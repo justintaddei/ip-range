@@ -1,6 +1,6 @@
 {
   "name": "@network-utils/ip-range",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A dead simple parser for IPv4 and IPv6 ranges, written in Typescript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
