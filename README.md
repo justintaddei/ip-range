@@ -29,7 +29,7 @@ import { parseRange, ipsBetween } from '@network-utils/ip-range'
 // These could be IPv6 also.
 const ipsFromCIDR = parseRange('192.168.1.120/29')
 const ipsFromHyphenatedRange = parseRange('192.168.1.121-192.168.1.126')
-const ipsFromHyphenatedRange = ipsBetween('192.168.1.121', '192.168.1.126')
+const ipsFromRange = ipsBetween('192.168.1.121', '192.168.1.126')
 
 /*
     All three output:
