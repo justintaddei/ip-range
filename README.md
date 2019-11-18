@@ -109,6 +109,16 @@ $ npm install
 $ npm test
 ```
 
+---
+
+## Related Packages
+
+- [@network-utils/tcp-ping](https://www.npmjs.com/package/@network-utils/tcp-ping)
+- [@network-utils/tcp-scanner](https://www.npmjs.com/package/@network-utils/tcp-scanner)
+- [@network-utils/arp-lookup](https://www.npmjs.com/package/@network-utils/arp-lookup)
+
+---
+
 ## License
 
 MIT
