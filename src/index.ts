@@ -22,17 +22,17 @@ const isCIDR = (range: string) => {
 /**
  * Checks if `ip` is a valid IPv4 address
  */
-const isV4 = (ip: string) => {
-  if (typeof ip !== 'string') throw new Error(`InvalidRange: expected "string" got ${typeof ip} (${ip})`)
-  return new ipAddress.Address4(ip).valid
+const isV4 = (address: string) => {
+  if (typeof address !== 'string') throw new Error(`InvalidRange: expected "string" got ${typeof address} (${address})`)
+  return new ipAddress.Address4(address).valid
 }
 
 /**
  * Checks if `ip` is a valid IPv6 address
  */
-const isV6 = (ip: string) => {
-  if (typeof ip !== 'string') throw new Error(`InvalidRange: expected "string" got ${typeof ip} (${ip})`)
-  return new ipAddress.Address6(ip).valid
+const isV6 = (address: string) => {
+  if (typeof address !== 'string') throw new Error(`InvalidRange: expected "string" got ${typeof address} (${address})`)
+  return new ipAddress.Address6(address).valid
 }
 
 /**
@@ -65,13 +65,14 @@ function v6Range(first: string, last: string): string[] {
   const ips: string[] = []
 
   // Convert the IP address to a number
-  const startAddress = new ipAddress.Address6(first).bigInteger()
-  const endAddress = new ipAddress.Address6(last).bigInteger()
+  const startAddress = (new ipAddress.Address6(first).bigInteger() as unknown) as number
+  const endAddress = (new ipAddress.Address6(last).bigInteger() as unknown) as number
 
   // Loop from start to end and add each IP to the `ips` array
   // * I'm not sure if `currentAddress++` is the right thing to do here, but it seems to work
-  for (let currentAddress = startAddress; currentAddress <= endAddress; ((currentAddress as unknown) as number)++)
-    ips.push(ipAddress.Address6.fromBigInteger(currentAddress).correctForm())
+  // todo: Figure out a better way to type this
+  for (let currentAddress = startAddress; currentAddress <= endAddress; currentAddress++)
+    ips.push(ipAddress.Address6.fromBigInteger(currentAddress as any).correctForm())
 
   return ips
 }
