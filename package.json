@@ -1,0 +1,60 @@
+{
+  "name": "@network-utils/ip-range",
+  "version": "0.1.0",
+  "description": "A dead simple parser for IP ranges, written in Typescript.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justintaddei/ip-range.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justintaddei/ip-range/issues"
+  },
+  "homepage": "https://github.com/justintaddei/ip-range",
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "keywords": [
+    "tcp",
+    "parse",
+    "util",
+    "ip range",
+    "network",
+    "cidr",
+    "ip",
+    "ip array"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "Justin Taddei",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/ip": "^1.1.0",
+    "@types/ip-address": "^5.8.2",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.8",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "ip": "^1.1.5",
+    "ip-address": "^6.1.0"
+  }
+}
